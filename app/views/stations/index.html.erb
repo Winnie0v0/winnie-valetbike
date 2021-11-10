@@ -1,0 +1,28 @@
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+      Welcome to Winnie's ValetBike!
+    </div>  
+    <div class="flexbox vertical stretch">
+      <h3> Stations </h3>
+      <% if @stations.present? %>
+        <%= render(partial: "stations/row", collection: @stations, as: :station) %>
+      <% else %>
+      <div class="empty">
+        No stations found.
+      </div>
+      <% end %>
+    </div>
+    <h3>  </h3>
+    <h3> Bikes </h3>
+    <div class="flexbox vertical stretch"> 
+      <% if @bikes.present? %>
+        <%= render(partial: "bikes/row", collection: @bikes, as: :bike) %>
+      <% else %>
+      <div class="empty">
+        No bike found.
+      </div>
+      <% end %>
+    </div>
+	</div>
+</div>

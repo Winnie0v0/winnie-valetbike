@@ -1,0 +1,26 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_520_ci
+  reconnect: false
+  pool: 5
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: valetbike_development
+  username: <%= ENV['MYSQL_USERNAME'] || '' %>
+  password: Zxw_010115
+
+test:
+  <<: *default
+  database: valetbike_test
+  username: root
+  password: 
+
+production:
+  <<: *default
+  database: valetbike_production
+  username: root
+  password: 
+ 
